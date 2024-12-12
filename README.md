@@ -1,8 +1,9 @@
 # SQL-data-cleaning
 ## Introduction
 This is an educational project on data cleaning and preparation using SQL. The original database in CSV format is located in the file club_member_info.csv. Here, we will explore the steps that need to be applied to obtain a cleansed version of the dataset.
-
+## Original-formatted Data Analysis
 Let's inspect the initial rows to analyze the data in its original formats
+
 SELECT * 
 FROM club_member_info 
 LIMIT 10
