@@ -4,9 +4,9 @@ This is an educational project on data cleaning and preparation using SQL. The o
 ## Original-formatted Data Analysis
 Let's inspect the initial rows to analyze the data in its original formats
 
-    <SELECT * 
+    SELECT * 
     FROM club_member_info 
-    LIMIT 10>
+    LIMIT 10
 
 |full_name|age|martial_status|email|phone|full_address|job_title|membership_date|
 |---------|---|--------------|-----|-----|------------|---------|---------------|
@@ -24,7 +24,8 @@ Let's inspect the initial rows to analyze the data in its original formats
 ## Get Started
 ### Copy the table
 Let's generate a copied table so that we can manipulate and reconstruct the data without modifying the original data
-CREATE TABLE club_member_info_cleaned (
+
+    CREATE TABLE club_member_info_cleaned (
 	full_name VARCHAR(50),
 	age INTEGER,
 	martial_status VARCHAR(50),
@@ -34,7 +35,6 @@ CREATE TABLE club_member_info_cleaned (
 	job_title VARCHAR(50),
 	membership_date VARCHAR(50)
 );
-
 Then copy all the values from the original table to the copied table
 INSERT INTO club_member_info_cleaned
 SELECT * FROM club_member_info;
