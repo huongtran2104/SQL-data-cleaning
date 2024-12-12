@@ -34,7 +34,7 @@ Let's generate a copied table so that we can manipulate and reconstruct the data
 	full_address VARCHAR(50),
 	job_title VARCHAR(50),
 	membership_date VARCHAR(50)
-);
+ );
 
 
 Then copy all the values from the original table to the copied table
