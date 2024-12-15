@@ -22,7 +22,7 @@ Let's inspect the initial rows to analyze the data in its original formats
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
 ## Get Started
-### Copy the table
+### PART 1: Copy the table
 Let's generate a copied table so that we can manipulate and reconstruct the data without modifying the original data
 
     CREATE TABLE club_member_info_cleaned (
@@ -41,5 +41,31 @@ Then copy all the values from the original table to the copied table
 
 INSERT INTO club_member_info_cleaned
 SELECT * FROM club_member_info;    
- ;
+
+### PART 2: Clean the data
+Regarding the copied database, there are several issues that we need to modify including
+- Inconsistent letter case
+- Age out of realistic range
+- Leading and trailing whitespaces
+#### Inconsistent letter case
+To remain the consistency, we set a specific rule for the data. In this case, I would like to transfer all the letter in full_name column to UPPERCASE. Don't forget to update the table to save the action.
+
+UPDATE club_member_info_cleaned 
+SET full_name = UPPER(full_name)
+
+#### Age out of realistic range
+There are some cells contain whose age is impossible like 352 years old. Thus, to reduce the error during data analysis, I would like to remove all the customers info whose age is unreal. Giving the realistic range from 18 to 100 years old. 
+
+DELETE from club_member_info_cleaned 
+WHERE age NOT BETWEEN 18 AND 100
+
+#### Leading and trailing whitespaces
+To remove both leading and trailing whitespaces, trimming is an ideal statement. Don't forget to update the table to save the action
+
+UPDATE club_member_info_cleaned 
+SET full_name = TRIM(full_name)
+
+
+
+
 
