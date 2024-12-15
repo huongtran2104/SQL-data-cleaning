@@ -38,5 +38,8 @@ Let's generate a copied table so that we can manipulate and reconstruct the data
 
 
 Then copy all the values from the original table to the copied table
+
 INSERT INTO club_member_info_cleaned
-SELECT * FROM club_member_info;
+SELECT * FROM club_member_info;    
+ ;
+
